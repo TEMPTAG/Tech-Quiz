@@ -1,0 +1,11 @@
+[
+  {
+    "question": "Pick THE correct answer...",
+    "answers": [
+      { "text": "Not this one.", "isCorrect": false },
+      { "text": "Pick me!", "isCorrect": true },
+      { "text": "Definitely not this one.", "isCorrect": false },
+      { "text": "Don't pick me.", "isCorrect": false }
+    ]
+  }
+]
