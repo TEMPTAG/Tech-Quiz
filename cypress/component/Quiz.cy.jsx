@@ -30,10 +30,10 @@ describe("<Quiz />", () => {
     // Click the 'Start Quiz' button
     cy.get(`[data-cy=start-quiz]`).contains("Start Quiz").click();
 
-    // Wait for the API call to complete and render the first question
+    // Wait for the API call to complete and render the first Question
     cy.wait("@getRandomQuestion");
 
-    // Verify the Question, numbered selection buttons, and provided answers text are rendered
+    // Verify the first Question, numbered selection buttons, and provided Answers text are rendered
     cy.get(`[data-cy=question]`).should("contain", mockQuestion[0].question);
     mockQuestion[0].answers.forEach((answer, index) => {
       cy.get(`[data-cy=answer-btn-${index}]`).should("contain", index + 1);
@@ -45,12 +45,12 @@ describe("<Quiz />", () => {
     // Visit the Quiz Page
     cy.mount(<Quiz />);
 
-    // Click the 'Start Quiz' button, wait for the API call to complete and render the first question, then click the second answer of the first question
+    // Click the 'Start Quiz' button, wait for the API call to complete and render the first Question, then click the second Answer of the first question
     cy.get(`[data-cy=start-quiz]`).contains("Start Quiz").click();
     cy.wait("@getRandomQuestion");
     cy.get(`[data-cy=answer-btn-1]`).click();
 
-    // Verify the second Question, numbered selection buttons, and provided answers text are rendered
+    // Verify the second Question, numbered selection buttons, and provided Answers text are rendered
     cy.get(`[data-cy=question]`).should("contain", mockQuestion[1].question);
     mockQuestion[1].answers.forEach((answer, index) => {
       cy.get(`[data-cy=answer-btn-${index}]`).should("contain", index + 1);
@@ -62,7 +62,7 @@ describe("<Quiz />", () => {
     // Visit the Quiz Page
     cy.mount(<Quiz />);
 
-    // Click the 'Start Quiz' button, wait for the API call to complete and render the first question, then click the second answer of the first question, and then click the fourth answer of the second question
+    // Click the 'Start Quiz' button, wait for the API call to complete and render the first Question, then click the second Answer of the first Question, and then click the fourth Answer of the second Question
     cy.get(`[data-cy=start-quiz]`).contains("Start Quiz").click();
     cy.wait("@getRandomQuestion");
     cy.get(`[data-cy=answer-btn-1]`).click();
@@ -76,5 +76,20 @@ describe("<Quiz />", () => {
 
     // Verify the 'Take New Quiz' button is rendered
     cy.get(`[data-cy=take-new-quiz]`).should("contain", "Take New Quiz");
+  });
+
+  it("should start a new game when the 'Take New Quiz' button is clicked", () => {
+    // Visit the Quiz Page
+    cy.mount(<Quiz />);
+
+    // Click the 'Start Quiz' button, wait for the API call to complete and render the first Question, then click the second Answer of the first Question, and then click the fourth Answer of the second Question, then click the 'Take New Quiz' button
+    cy.get(`[data-cy=start-quiz]`).contains("Start Quiz").click();
+    cy.wait("@getRandomQuestion");
+    cy.get(`[data-cy=answer-btn-1]`).click();
+    cy.get(`[data-cy=answer-btn-3]`).click();
+    cy.get(`[data-cy=take-new-quiz]`).click();
+
+    // Verify the first Question is rendered again
+    cy.get(`[data-cy=question]`).should("contain", mockQuestion[0].question);
   });
 });
