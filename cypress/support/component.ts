@@ -1,4 +1,4 @@
-import "./commands";
+import "./commands.ts";
 import { mount } from "cypress/react18";
 
 Cypress.Commands.add("mount", mount);
