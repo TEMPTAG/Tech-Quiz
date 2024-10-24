@@ -1,10 +1,12 @@
-{
-  "_id": "5f0b5d7b9b1f1b0017f6b3b1",
-  "question": "Pick THE correct answer...",
-  "answers": [
-    { "text": "Not this one.", "isCorrect": false },
-    { "text": "Pick me!", "isCorrect": true },
-    { "text": "Definitely not this one.", "isCorrect": false },
-    { "text": "Don't pick me.", "isCorrect": false }
-  ]
-}
+[
+  {
+    "_id": "5f0b5d7b9b1f1b0017f6b3b1",
+    "question": "Pick THE correct answer...",
+    "answers": [
+      { "text": "Not this one.", "isCorrect": false },
+      { "text": "Pick me!", "isCorrect": true },
+      { "text": "Definitely not this one.", "isCorrect": false },
+      { "text": "Don't pick me.", "isCorrect": false }
+    ]
+  }
+]
