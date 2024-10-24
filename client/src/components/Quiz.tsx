@@ -61,11 +61,12 @@ const Quiz = () => {
   if (quizCompleted) {
     return (
       <div className="card p-4 text-center">
-        <h2>Quiz Completed</h2>
-        <div className="alert alert-success">
+        <h2 data-cy="quiz-completed">Quiz Completed</h2>
+        <div data-cy="your-score" className="alert alert-success">
           Your score: {score}/{questions.length}
         </div>
         <button
+          data-cy="take-new-quiz"
           className="btn btn-primary d-inline-block mx-auto"
           onClick={handleStartQuiz}
         >
