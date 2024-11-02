@@ -1,6 +1,5 @@
 import React from "react";
 import Quiz from "../../client/src/components/Quiz";
-// import { mount } from "@cypress/react18";
 import mockQuestion from "../fixtures/questions.json";
 import "@testing-library/cypress/add-commands";
 
