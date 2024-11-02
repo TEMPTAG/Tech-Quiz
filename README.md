@@ -10,7 +10,7 @@
 
 This project adds Cypress testing to the existing Tech Quiz application, a MERN stack application that allows users to take a quiz with ten random questions and view their score upon completion. The Cypress tests include both component and end-to-end tests to ensure that the application functions reliably and meets user expectations.
 
-[Link to Walkthrough Video]()
+[Link to Walkthrough Video](https://drive.google.com/file/d/1KLfkHWLiZwllr1T3Dom6q1ZiBRaEfuvf/view)
 
 ---
 
