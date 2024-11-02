@@ -3,7 +3,7 @@ import Quiz from "../../client/src/components/Quiz";
 import mockQuestion from "../fixtures/questions.json";
 import "@testing-library/cypress/add-commands";
 
-describe("<Quiz />", () => {
+describe("Tech Quiz Component Testing", () => {
   // Intercept the GET request to /api/questions/random and reply with the mockQuestion fixture data
   beforeEach(() => {
     cy.intercept("GET", "/api/questions/random", (req) => {
